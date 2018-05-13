@@ -1,0 +1,11 @@
+.tea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.teaRow {
+  display: flex;
+  justify-content: center;
+}
