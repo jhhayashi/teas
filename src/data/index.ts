@@ -6,7 +6,7 @@ const FAMILIES = {
   green: 'green',
 }
 
-export interface ITea {
+export interface ITeaBase {
   brewTemp: IRange,
   brewTime: IRange,
   description: string,
@@ -15,7 +15,7 @@ export interface ITea {
   purchaseDate: Date,
 }
 
-const teas: ITea[][] = [
+const teas: ITeaBase[][] = [
   [
     {
       brewTemp: new Range(175),

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import cx from 'classnames'
 
 import {RADIUS} from '../../constants'
 
@@ -10,9 +11,25 @@ const circleStyles = {
   borderRadius: `${RADIUS}px`,
 }
 
-export default function Tea(props) {
+interface ITeaProps {
+  onMouseEnter: (() => void),
+  onMouseLeave: (() => void),
+  onClick: (() => void),
+  isSelected: boolean,
+  isHovered: boolean,
+  name: string,
+}
+
+export default function Tea(props: ITeaProps) {
+  const classes = cx(cs.tea, props.isSelected && cs.selected, props.isHovered && cs.hovered)
   return (
-    <div className={cs.tea} style={circleStyles}>
+    <div
+      className={classes}
+      style={circleStyles}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+      onClick={props.onClick}
+    >
       {props.name}
     </div>
   )
