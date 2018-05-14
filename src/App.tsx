@@ -1,7 +1,7 @@
 import * as React from 'react'
-import {compose, flatten, keyBy, map} from 'lodash/fp'
+import {compose, flatten, get, keyBy, map} from 'lodash/fp'
 
-import {TeaChart} from './components'
+import {TeaChart, TeaInfo} from './components'
 import teas from './data'
 import {ITeaID, ITea} from './types'
 
@@ -34,14 +34,18 @@ export default class App extends React.Component {
   }
 
   render() {
+    const activeTea = get(this.state.selectedTea || this.state.hoveredTea, this.state.teas)
     return (
-      <TeaChart
-        teas={this.state.layout}
-        hoveredTea={this.state.hoveredTea}
-        onHover={this.updateHovered}
-        selectedTea={this.state.selectedTea}
-        onSelect={this.updateSelected}
-      />
+      <div>
+        <TeaChart
+          teas={this.state.layout}
+          hoveredTea={this.state.hoveredTea}
+          onHover={this.updateHovered}
+          selectedTea={this.state.selectedTea}
+          onSelect={this.updateSelected}
+        />
+        <TeaInfo {...activeTea} />
+      </div>
     )
   }
 }
