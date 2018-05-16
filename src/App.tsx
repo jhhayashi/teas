@@ -1,9 +1,11 @@
 import * as React from 'react'
 import {compose, flatten, get, keyBy, map} from 'lodash/fp'
+import cx from 'classnames'
 
 import {TeaChart, TeaInfo} from './components'
 import teas from './data'
 import {ITeaID, ITea} from './types'
+import * as cs from './styles.css'
 
 let idCount = 0
 const getId = () => idCount++
@@ -36,15 +38,16 @@ export default class App extends React.Component {
   render() {
     const activeTea = get(this.state.selectedTea || this.state.hoveredTea, this.state.teas)
     return (
-      <div>
+      <div className={cs.appContainer}>
         <TeaChart
+          className={cs.teaChart}
           teas={this.state.layout}
           hoveredTea={this.state.hoveredTea}
           onHover={this.updateHovered}
           selectedTea={this.state.selectedTea}
           onSelect={this.updateSelected}
         />
-        <TeaInfo {...activeTea} />
+        <TeaInfo className={cx(cs.teaInfo, activeTea && cs.visible)} {...activeTea} />
       </div>
     )
   }

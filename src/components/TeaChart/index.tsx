@@ -10,11 +10,12 @@ interface ITeaChartProps {
   onHover: ((id: ITeaID) => void),
   selectedTea: ITeaID,
   onSelect: ((id: ITeaID) => void),
+  className?: string,
 }
 
 export default function TeaChart(props: ITeaChartProps) {
   return (
-    <div>
+    <div className={props.className}>
       {props.teas.map(teaRow => <TeaRow {...props} teas={teaRow} />)}
     </div>
   )
