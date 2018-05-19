@@ -9,7 +9,9 @@
     "@types/react-dom": "^16.0.5",
     "classnames": "^2.2.5",
     "d3": "^5.4.0",
+    "express": "^4.16.3",
     "lodash": "^4.17.5",
+    "nodemon": "^1.17.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
@@ -40,6 +42,7 @@
     "lint": "tslint -p . -c tslint.json 'src/**/*.ts'",
     "build": "rm -Rf dist && webpack -p",
     "build:prod": "rm -Rf dist && NODE_ENV=production webpack -p",
+    "start": "nodemon server",
     "test": "npm run lint && tsc --noEmit"
   },
   "author": "Jordan Hayashi <jordan@jordanhayashi.com>",
