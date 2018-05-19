@@ -1,49 +1,38 @@
+import {
+  CremeEarlGrey,
+  GoldenMonkey,
+  Gunpowder,
+  Gyokuro,
+  ITeaData,
+  MasalaChai,
+  MilkOolong,
+  MintChamomile,
+  OrangeEchinacea,
+  UnityBlend,
+} from './teas'
 import Range, {IRange} from './Range'
 import TimeRange from './TimeRange'
 
-const FAMILIES = {
-  black: 'black',
-  green: 'green',
-}
-
-export interface ITeaBase {
+export interface ITeaBase extends ITeaData {
   brewTemp: IRange,
   brewTime: IRange,
-  description: string,
-  family: string,
-  name: string,
-  purchaseDate: Date,
 }
 
-const teas: ITeaBase[][] = [
-  [
-    {
-      brewTemp: new Range(175),
-      brewTime: new TimeRange(180),
-      description: 'This is a green tea from Japan',
-      family: FAMILIES.green,
-      name: 'Gyokuro',
-      purchaseDate: new Date('01-01-2017'),
-    },
-  ],
-  [
-    {
-      brewTemp: new Range(175),
-      brewTime: new TimeRange(180),
-      description: 'This is a green tea from Japan',
-      family: FAMILIES.green,
-      name: 'Milk Oolong',
-      purchaseDate: new Date('01-01-2017'),
-    },
-    {
-      brewTemp: new Range(212),
-      brewTime: new TimeRange(180),
-      description: 'This is a well-balanced black tea',
-      family: FAMILIES.black,
-      name: 'Golden Monkey',
-      purchaseDate: new Date('01-01-2017'),
-    },
-  ],
+const teas = [
+  [MintChamomile, UnityBlend],
+  [OrangeEchinacea],
+  [Gyokuro, Gunpowder],
+  [MilkOolong],
+  [CremeEarlGrey, GoldenMonkey],
+  [MasalaChai],
 ]
 
-export default teas
+const withRanges: ITeaBase[][] = teas.map(row => row.map(tea => ({
+  ...tea,
+  // @ts-ignore
+  brewTemp: new Range(...tea.brewTemp),
+  // @ts-ignore
+  brewTime: new TimeRange(...tea.brewTime),
+})))
+
+export default withRanges
