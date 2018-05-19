@@ -18,6 +18,7 @@ interface ITeaProps {
   isSelected: boolean,
   isHovered: boolean,
   name: string,
+  displayName?: string,
 }
 
 export default function Tea(props: ITeaProps) {
@@ -30,7 +31,7 @@ export default function Tea(props: ITeaProps) {
       onMouseLeave={props.onMouseLeave}
       onClick={props.onClick}
     >
-      {props.name}
+      {props.displayName || props.name}
     </div>
   )
 }

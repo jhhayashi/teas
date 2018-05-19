@@ -18,6 +18,7 @@ export default function TeaRow(props: ITeaRowProps) {
     <div className={cs.teaRow}>
       {props.teas.map(tea => (
         <Tea
+          key={tea.name}
           {...tea}
           isSelected={props.selectedTea === tea.id}
           isHovered={props.hoveredTea === tea.id}

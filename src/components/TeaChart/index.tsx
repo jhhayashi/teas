@@ -16,7 +16,7 @@ interface ITeaChartProps {
 export default function TeaChart(props: ITeaChartProps) {
   return (
     <div className={props.className}>
-      {props.teas.map(teaRow => <TeaRow {...props} teas={teaRow} />)}
+      {props.teas.map((teaRow, i) => <TeaRow key={i} {...props} teas={teaRow} />)}
     </div>
   )
 }
