@@ -1,9 +1,11 @@
 import {
+  AliShan,
   CremeEarlGrey,
   GoldenMonkey,
   Gunpowder,
   Gyokuro,
   ITeaData,
+  LemonVerbena,
   MasalaChai,
   MilkOolong,
   MintChamomile,
@@ -20,11 +22,12 @@ export interface ITeaBase extends ITeaData {
 
 const teas = [
   [MintChamomile, UnityBlend],
-  [OrangeEchinacea],
-  [Gyokuro, Gunpowder],
-  [MilkOolong],
-  [CremeEarlGrey, GoldenMonkey],
+  [LemonVerbena],
+  [OrangeEchinacea, Gyokuro],
+  [Gunpowder],
+  [MilkOolong, AliShan],
   [MasalaChai],
+  [CremeEarlGrey, GoldenMonkey],
 ]
 
 const withRanges: ITeaBase[][] = teas.map(row => row.map(tea => ({

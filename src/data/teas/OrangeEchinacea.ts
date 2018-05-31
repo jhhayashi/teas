@@ -4,7 +4,7 @@ const OrangeEchinacea: ITeaData = {
   brewTemp: [212],
   brewTime: [240],
   caffiene: 2,
-  description: 'If you feel the beginnings of a cold of flu, this is the tea for you. With soothing natural orange and jasmine essence to nurse sinus troubles and runny noses and echinacea to battle back sickness and boost your immune system, you now have a powerful weapon',
+  description: 'If you feel the beginnings of a cold of flu, this is the tea for you. It has soothing natural orange and jasmine essence to nurse sinus troubles and runny noses and echinacea to battle back sickness and boost your immune system.',
   family: TeaFamily.Herbal,
   name: 'Orange Echinacea',
   purchaseDate: new Date('04-21-2017'),
