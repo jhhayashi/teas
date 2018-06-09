@@ -1,5 +1,6 @@
 export {default as AliShan} from './AliShan'
 export {default as CremeEarlGrey} from './CremeEarlGrey'
+export {default as DragonPearl} from './DragonPearl'
 export {default as GoldenMonkey} from './GoldenMonkey'
 export {default as Gunpowder} from './Gunpowder'
 export {default as Gyokuro} from './Gyokuro'

@@ -1,6 +1,7 @@
 import {
   AliShan,
   CremeEarlGrey,
+  DragonPearl,
   GoldenMonkey,
   Gunpowder,
   Gyokuro,
@@ -21,10 +22,11 @@ export interface ITeaBase extends ITeaData {
 }
 
 const teas = [
-  [MintChamomile, UnityBlend],
   [LemonVerbena],
-  [OrangeEchinacea, Gyokuro],
-  [Gunpowder],
+  [MintChamomile, UnityBlend],
+  [OrangeEchinacea],
+  [Gyokuro, Gunpowder],
+  [DragonPearl],
   [MilkOolong, AliShan],
   [MasalaChai],
   [CremeEarlGrey, GoldenMonkey],
