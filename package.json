@@ -1,6 +1,6 @@
 {
   "name": "teas",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "description": "Site to keeop track of my tea collection",
   "main": "index.js",
