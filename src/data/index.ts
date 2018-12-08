@@ -22,14 +22,10 @@ export interface ITeaBase extends ITeaData {
 }
 
 const teas = [
-  [LemonVerbena],
-  [MintChamomile, UnityBlend],
-  [OrangeEchinacea],
-  [Gyokuro, Gunpowder],
-  [DragonPearl],
-  [MilkOolong, AliShan],
-  [MasalaChai],
-  [CremeEarlGrey, GoldenMonkey],
+  [MintChamomile, LemonVerbena, UnityBlend],
+  [Gyokuro, OrangeEchinacea, Gunpowder],
+  [MilkOolong, DragonPearl, AliShan],
+  [CremeEarlGrey, MasalaChai, GoldenMonkey],
 ]
 
 const withRanges: ITeaBase[][] = teas.map(row => row.map(tea => ({
